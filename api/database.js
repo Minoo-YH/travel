@@ -48,11 +48,13 @@ export const startServer = async (app) => {
 
     await connectDatabases();
 
-    app.listen(port, () =>
+    app.listen(port,'0.0.0.0', () =>
       console.log(`Server is listening on  http://localhost:${port}`)
     );
   } catch (error) {
     console.error("Failed to start server:", error);
   }
-    console.log("PORT is:", process.env.PORT);
+   
+
 };
+
