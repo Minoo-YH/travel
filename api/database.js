@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const port = process.env.PORT || 5000;
+
 const connectDatabases = async () => {
   try {
     const roomsDB = mongoose.createConnection(`${process.env.MONGO_URL}/rooms`, {
