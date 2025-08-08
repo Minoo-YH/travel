@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT ;
 
 const connectDatabases = async () => {
   try {
@@ -33,6 +33,8 @@ const connectDatabases = async () => {
     console.error("Failed to connect to MongoDB databases:", error);
     throw error;
   }
+
+
 };
 
 
@@ -47,9 +49,10 @@ export const startServer = async (app) => {
     await connectDatabases();
 
     app.listen(port, () =>
-      console.log(`Server is listening on http://localhost:${port}`)
+      console.log(`Server is listening on  http://localhost:${port}`)
     );
   } catch (error) {
     console.error("Failed to start server:", error);
   }
+    console.log("PORT is:", process.env.PORT);
 };
