@@ -10,7 +10,7 @@ const RatingList = [
   { id: "4", name: "Emily Johnson", comment: "Loved the ambience and service!", image: "https://randomuser.me/api/portraits/women/6.jpg", stars: 4 },
   { id: "5", name: "Michael Brown", comment: "Highly recommended, will visit again.", image: "https://randomuser.me/api/portraits/men/7.jpg", stars: 5 },
   { id: "6", name: "Alice Green", comment: "Amazing experience! Great location.", image: "https://randomuser.me/api/portraits/women/7.jpg", stars: 5 },
-  { id: "7", name: "George Black", comment: "Would come back every time!", image: "https://randomuser.me/api/portraits/men/8.jpg", stars: 4 },
+  { id: "7", name: "George Blackj", comment: "Would come back every time!", image: "https://randomuser.me/api/portraits/men/8.jpg", stars: 4 },
 ];
 
 function Review() {

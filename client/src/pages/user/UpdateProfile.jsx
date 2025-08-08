@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import axios from "axios"; 
 import CountrySelect from "../Auth/CountrySelect"; 
 import { useNavigate } from "react-router-dom";
 import Ftr from "../../components/Ftr/Ftr";
 import Nav from "@Nav";
-import "./updateProfile.css";
+
 
 const UpdateProfile = () => {
   const [user, setUser] = useState([]);
