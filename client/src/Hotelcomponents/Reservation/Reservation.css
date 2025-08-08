@@ -1,0 +1,176 @@
+/* Center the form container */
+.reservation-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f4f7fc;
+}
+
+/* Adds section background (for title or section headers) */
+.reservation-adds {
+  background-color: #cb5c00;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Style the form */
+.styled-form {
+  width: 90%;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* Form label styling */
+.styled-form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Input fields in the form */
+.styled-form input,
+.styled-form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 16px;
+  background-color: #f9f9f9;
+}
+
+/* Button styling */
+.styled-form button {
+  height: 38px;
+  width: 100%;
+  border: none;
+  background-color: #cb5c00;
+  font-family: "Poppins";
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 2px 2px 3px #ffffff49, inset 3px 3px 10px #ffffff39;
+  transition: 1s;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+/* Hover effect for button */
+.styled-form button:hover {
+  background-color: #b94e00;
+}
+
+/* Table-like row highlighting in form */
+.styled-form .highlight-row {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+/* Hover effect on rows in the form */
+.styled-form .highlight-row:hover {
+  background-color: #f2f2f2;
+}
+
+/* Add smooth transitions to the form elements */
+.styled-form input,
+.styled-form select,
+.styled-form button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Styling the error message */
+.styled-form .error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Table rows alternate background (for dates or similar) */
+.styled-form .date-range-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Table rows first child */
+.styled-form .date-range-row:first-child {
+  border-top: 2px solid #cb5c00;
+}
+
+.border {
+    border: 2px solid red;
+  }
+.Pay_Nowh3 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.Pay-Now1 {
+  padding: 10px;
+  margin-bottom: 100px;
+}
+
+.Pay-Now1 input[type="checkbox"] {
+  margin-right: 10px; /* Adds some space between checkbox and label text */
+
+}
+
+.Calendar {
+  border: 2px solid red;
+  background-color: gray;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px; /* Limit the width of the calendar */
+  height: 100%;
+  height: calc(100% + 2cm); /* Increase height by 2 cm */
+  padding: 1px;
+  font-family: 'Poppins', sans-serif; /* Font consistent with other elements */
+  color: #333;
+  
+  /* Push it up */
+  margin-top: -2cm; /* Adjust this value to move it up */
+}
+
+  .Calendar .react-calendar__tile {
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .Calendar .react-calendar__tile:hover {
+    background-color: #cb5c00; 
+    color: white; 
+  }
+  
+
+  .Calendar .react-calendar__month-view__days__day {
+    font-size: 14px; /* Smaller font size for the day numbers */
+    padding: 10px; /* More padding inside the day tiles */
+  }
+  
+  .Calendar .react-calendar__navigation button {
+    background-color: #cb5c00; /* Use your theme color for buttons */
+    color: white; /* Button text color */
+    font-weight: bold; /* Make button text bold */
+    border: none;
+    padding: 10px;
+    border-radius: 5px; /* Rounded buttons */
+    cursor: pointer; /* Cursor pointer on hover */
+    transition: background-color 0.3s ease;
+  }
+  
+  .Calendar .react-calendar__navigation button:hover {
+    background-color: black; /* Darken the button color on hover */
+  }
+  

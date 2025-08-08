@@ -1,0 +1,17 @@
+:root {
+  --container-padding: 4.8rem;
+}
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--container-padding);
+}
+
+.divider {
+  border-bottom: 1px solid var(--border); 
+  margin: 3rem 0;
+  width: calc(100% + var(--container-padding) + var(--container-padding));
+  margin-left: calc(var(--container-padding) * -1);
+}

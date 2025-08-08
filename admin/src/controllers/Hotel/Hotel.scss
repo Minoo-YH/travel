@@ -1,0 +1,139 @@
+.hotel-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .hotel-search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .add-hotel-button {
+    padding: 10px 20px;
+    background-color: #6439ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #5032e5;
+    }
+  }
+  
+  .hotel-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+  
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    th {
+      background-color: #6439ff;
+      color: white;
+    }
+  
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  
+    td {
+      font-size: 14px;
+      color: #555;
+    }
+  }
+  
+  .delete-hotel-button,
+  .edit-hotel-button,
+  .add-room-button,
+  .view-rooms-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-hotel-button {
+    background-color: #ff4d4d;
+    color: white;
+  
+    &:hover {
+      background-color: #e04444;
+    }
+  }
+  
+  .edit-hotel-button {
+    background-color: #ffa500;
+    color: white;
+  
+    &:hover {
+      background-color: #e07b00;
+    }
+  }
+  
+  .add-room-button {
+    background-color: #4caf50;
+    color: white;
+  
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+  
+  .view-rooms-button {
+    background-color: #007bff;
+    color: white;
+  
+    &:hover {
+      background-color: #0069d9;
+    }
+  }
+
+  
+  @media screen and (max-width: 768px) {
+    .hotel-container {
+      padding: 10px;
+    }
+  
+    .hotel-table {
+      font-size: 12px;
+    }
+  
+    .add-hotel-button,
+    .hotel-search-input {
+      width: 100%;
+    }
+  
+    .delete-hotel-button,
+    .edit-hotel-button,
+    .add-room-button,
+    .view-rooms-button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+  

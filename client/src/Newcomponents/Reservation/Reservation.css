@@ -1,0 +1,35 @@
+.container123 {
+    display: grid;
+    grid-template-rows: 10% 1fr 10%; 
+    grid-template-columns: 1fr;
+    height: 100vh; 
+  }
+  
+  .part-21 {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .part-22 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .part-22-4, 
+  .part-22-9 { /
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .part-23 {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  

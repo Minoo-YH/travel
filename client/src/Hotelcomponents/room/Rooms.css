@@ -1,0 +1,103 @@
+/* Style for the Rooms component */
+.rooms-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5cm; /* Gap between items is now 0.5 cm */
+  justify-content: flex-end; /* Align items to the right */
+  flex-direction: row-reverse; /* Start layout from right to left */
+  padding-top: 0.5cm; /* Space at the top */
+  padding-bottom: 0.5cm; /* Space at the bottom */
+  background-color:white ;
+
+
+}
+
+.border {
+  border: 2px solid red;
+}
+
+.room-card {
+  background-color: rgba(128, 128, 128, 0.3);
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-left: 20px;
+  border: 2px solid antiquewhite;
+  
+}
+
+.room-card:hover {
+  transform: translateY(-10px);
+}
+
+.room-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.room-card .details {
+  padding: 15px;
+  color: #333;
+}
+
+.room-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.room-card p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.room-card .price {
+  font-weight: bold;
+  color: #2a9d8f;
+  font-size: 16px;
+}
+
+.room-card button {
+  background-color: #f4a261;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.room-card button:hover {
+  background-color: #e76f51;
+}
+
+.room-card .room-number {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.room-card .nav-button {
+  height: 38px;
+  width: 130px;
+  border: none;
+  justify-content: center;
+  background-color: #cb5c00;
+  font-family: 'Poppins';
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 2px 2px 3px #ffffff49, inset 3px 3px 10px #ffffff39;
+  transition: 1s;
+  cursor: pointer;
+
+}
+
+.nav-button:hover {
+  box-shadow: 2px 0px 3px #69696949, inset 3px 3px 10px #ffffff39;
+  transform: scale(0.95);
+}

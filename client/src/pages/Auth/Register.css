@@ -1,0 +1,43 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px; 
+    margin: auto;
+  }
+  
+  input, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+height: 38px;
+  width: 130px;
+  border: none;
+  justify-content: center;
+  background-color: #cb5c00;
+  font-family: 'Poppins';
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 2px 2px 3px #ffffff49, inset 3px 3px 10px #ffffff39;
+  transition: 1s;
+  cursor: pointer;
+
+  }
+  
+  button:hover {
+    box-shadow: 2px 0px 3px #69696949, inset 3px 3px 10px #ffffff39;
+    transform: scale(0.95);
+  }
+  
+  .auth-error {
+    color: red;
+    font-size: 14px;
+  }
+  

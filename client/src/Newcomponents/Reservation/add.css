@@ -1,0 +1,131 @@
+/* Center the table container */
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f7fc;
+  }
+  
+  /* Adds section background */
+  .Adds {
+    background-color: #cb5c00;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Style the table */
+  .styled-table {
+    width: 90%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  /* Table data cells */
+  .styled-table td {
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Feature names styling */
+  .feature-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    justify-content: space-between;
+  
+  }
+  
+  /* Price styling */
+  .price {
+    font-size: 20px;
+    color: black;
+  }
+  
+  /* Table header with 'Adds' row */
+  .styled-table th {
+    background-color: #cb5c00;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+  
+  /* Hover effect on rows */
+  .styled-table tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  /* Checkbox styling */
+  .styled-table input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Scale up the checkbox when hovered */
+  .styled-table input[type="checkbox"]:hover {
+    transform: scale(1.4);
+  }
+  
+  /* Table rows alternate background */
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Table rows first child */
+  .styled-table tbody tr:first-child {
+    border-top: 2px solid #cb5c00;
+  }
+  
+  /* Last row, give rounded corners */
+  .styled-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Add smooth transitions to the table for aesthetics */
+  .styled-table td, .styled-table th {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .styled-table tbody tr:hover td {
+    background-color: #f1f1f1;
+    color: #555;
+  }
+  
+
+
+  .nav-buttontable-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Optional: Adds space between the table and button */
+  }
+  
+  .nav-buttontable {
+    height: 38px;
+    width: 130px;
+    border: none;
+    background-color: #cb5c00;
+    font-family: 'Poppins';
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 30px;
+    box-shadow: 2px 2px 3px #ffffff49, inset 3px 3px 10px #ffffff39;
+    transition: 1s;
+    cursor: pointer;
+  }
+  

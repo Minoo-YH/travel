@@ -1,0 +1,156 @@
+
+.FutureTrip_Wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f4f4f9; /* Soft background color for a clean look */
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; /* Ensure child elements are positioned relative to this */
+  transition: all 0.4s ease-in-out;
+
+ 
+}
+
+
+
+/* Heading Style */
+.FutureTrip_Wrapper h2 {
+  
+  font-size: 36px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.FutureTrip_Wrapper:hover h2 {
+  transform: translateY(-5px);
+}
+
+
+.FutureTripCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: all 0.4s ease-in-out;
+ 
+}
+
+/* Individual Card Styling */
+.FutureTripCard {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+
+}
+
+.FutureTripCard:hover {
+  transform: translateY(-10px); /* Subtle lifting effect on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
+}
+
+/* Card Image Styles */
+.FutureTripCard .FutureTripCardImage {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.FutureTripCard .FutureTripCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.FutureTripCard:hover .FutureTripCardImage img {
+  transform: scale(1.1); /* Slight zoom-in effect on hover */
+}
+
+/* Card Title */
+.FutureTripCard h3 {
+  font-size: 20px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: #333;
+  margin: 15px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.FutureTripCard:hover h3 {
+  color: #cb5c00; /* Color change on hover */
+}
+
+/* Card Date */
+.FutureTripCard p {
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  color: #777;
+  margin-bottom: 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.FutureTripCard:hover p {
+  color: #333; /* Change color to dark on hover */
+}
+
+/* Responsive Design for Tablets */
+@media screen and (max-width: 1024px) {
+  .FutureTripCards {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+  .FutureTripCards {
+    grid-template-columns: 1fr; /* 1 column for mobile */
+  }
+
+  .FutureTrip_Wrapper {
+    padding: 40px 20px; /* Reduced padding for smaller screens */
+  }
+
+  .FutureTripCard {
+    padding: 15px;
+  }
+}
+
+/* Mobile-first Adjustments */
+@media screen and (max-width: 480px) {
+  .FutureTrip_Wrapper h2 {
+    font-size: 28px; /* Smaller heading on mobile */
+  }
+
+  .FutureTripCard h3 {
+    font-size: 18px; /* Smaller card titles on mobile */
+  }
+
+  .FutureTripCard p {
+    font-size: 12px; /* Smaller text for dates */
+  }
+}

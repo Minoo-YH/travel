@@ -1,0 +1,143 @@
+/* Header Wrapper */
+.header_wrapper {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Swiper Container */
+.swiper {
+  height: 100vh !important;
+  width: 100% !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Slide Styles */
+.Header_slide {
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: all 0.6s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.slide1 {
+  background-image: url(/assets/images/mexico.jpg); /* Change to your new image */
+}
+
+.slide2 {
+  background-image: url(/assets/images/italy.jpg); /* Change to your new image */
+}
+
+.slide3 {
+  background-image: url(/assets/images/brazil.jpg); /* Change to your new image */
+}
+
+/* Content Styles */
+.Header_slide .content {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+  gap: 18px;
+  padding: 0 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  max-width: 80%;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  animation: contentFadeIn 1s ease-in-out forwards;
+}
+
+.Header_slide:hover .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Small Text */
+.Header_slide .content small {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Main Heading */
+.Header_slide .content h2 {
+  color: #fff;
+  font-size: 48px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.Header_slide .content h2 span {
+  color: #cb5c00;
+  font-weight: 900;
+}
+
+/* Hover Effects */
+.Header_slide:hover {
+  transform: scale(1.05); /* Slight zoom on hover for extra visual interest */
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .Header_slide .content {
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    padding: 0 15px;
+    max-width: 90%;
+  }
+
+  .Header_slide .content h2 {
+    font-size: 28px;
+  }
+
+  .Header_slide .content small {
+    font-size: 14px;
+  }
+}
+
+/* Animation for Fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

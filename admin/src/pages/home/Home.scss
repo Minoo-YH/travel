@@ -1,0 +1,39 @@
+.home {
+  display: flex;
+  gap: 20px;
+
+  .homeContainer {
+    flex: 6;
+    padding: 20px;
+    background-color: #f9f9f9; 
+
+    .widgets, .charts {
+      display: flex;
+      gap: 20px;
+    }
+
+    .widgets {
+      margin-bottom: 20px;
+    }
+
+    .charts {
+      display: flex;
+      gap: 20px;
+    }
+
+    .listContainer {
+      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.1);
+      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.2);
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px; 
+      margin-top: 20px;
+
+      .listTitle {
+        font-weight: 500;
+        color: #7451f8; 
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

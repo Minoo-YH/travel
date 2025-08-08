@@ -1,0 +1,41 @@
+:root {
+    --primary: rgb(250, 250, 250);
+    --secondary: rgb(240, 240, 240);
+    --text: rgb(50, 50, 50);
+    --border: rgba(202, 202, 202, 0.5);
+    --title: rgb(50, 50, 50);
+    --input-bg: #f9f9f9;
+    --input-text: #000;
+  }
+  
+  .dark {
+    --primary: #000;
+    --secondary: rgb(24, 24, 27);
+    --text: rgb(240, 240, 240);
+    --border: rgba(63, 63, 70, 0.4);
+    --title: rgb(244, 244, 245);
+    --input-bg: #333;
+    --input-text: #fff;
+  }
+  
+  body {
+    background-color: var(--primary);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .container {
+    background-color: var(--secondary);
+    border: 2px solid var(--border);
+  }
+  
+  button {
+    background-color: var(--secondary);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  
+  button:hover {
+    background-color: var(--border);
+  }
+  

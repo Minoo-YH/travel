@@ -1,0 +1,25 @@
+/* Map.css */
+
+/* Styling for hotel cards */
+.hotel-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for hotel images */
+.hotel-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Styling for hotel link */
+.hotel-link {
+  text-decoration: none;
+  color: #1976d2; /* Use the primary color */
+  font-weight: bold;
+}
