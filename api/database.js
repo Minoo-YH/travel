@@ -1,8 +1,5 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-
-
-const port = process.env.PORT ;
 dotenv.config();
 
 
@@ -32,13 +29,15 @@ const connectDatabases = async () => {
     console.log("Connected to Rooms, Auth, and Hotelm, Reservation databases");
     return { roomsDB, authDB, hotelDB, reservationDB};
   } catch (error) {
-    console.error("Failed to connect to MongoDB databasesa:", error);
+    console.error("Failed to connect to MongoDB databases:", error);
     throw error;
   }
 
 
 };
 
+
+const port = process.env.PORT ;
 export const startServer = async (app) => {
   try {
     await mongoose.connect(process.env.MONGO_URL, {
