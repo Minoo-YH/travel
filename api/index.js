@@ -23,7 +23,12 @@ if (!fs.existsSync("uploads")) {
 
 // Middleware
 const corsOptions = {
-    origin: ["http://localhost:3000", "http://localhost:5173"], 
+    origin: [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "https://travel-site-frontend.onrender.com" 
+],
+
     methods: "GET, POST, PUT, DELETE",
     credentials: true,
 };
