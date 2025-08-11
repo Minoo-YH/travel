@@ -1,3 +1,4 @@
+import React from "react";
 import Modal from "react-modal";
 import "./HotelImagesModal.css";
 import { Swiper, SwiperSlide } from "swiper/react";

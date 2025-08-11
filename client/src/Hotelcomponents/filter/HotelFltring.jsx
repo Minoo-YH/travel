@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import HotelImagesModal from "./HotelImagesModal";
+import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import "./HotelFltring.css";
-import { fetchHotelsFilter } from "../../Api/Api"
 
 const Hotels = ({ searchData }) => {
   const [hotels, setHotels] = useState([]);
@@ -18,19 +18,21 @@ const Hotels = ({ searchData }) => {
     const fetchHotels = async () => {
       setLoading(true);
       setError(null);
-
+    
       try {
-        const params = {
-          city: searchData.destination.trim(),
+        let url = "https://travel-site-sa34.onrender.com/api/hotels/filter";
+        let params = {
+          city: searchData.destination.trim(), // إزالة أي مسافات غير مرئية
           maxPrice: searchData.priceRange[1],
         };
-
+    
         if (searchData.rating) {
           params.rating = Number(searchData.rating);
         }
-
+    
         console.log("🚀 Fetching hotels with params:", params);
-        const response = await fetchHotelsFilter(params);  // استدعاء API هنا
+        const response = await axios.get(url, { params });
+    
         setHotels(response.data);
       } catch (error) {
         setError(error.response?.data?.message || "Error fetching hotels");
@@ -38,6 +40,7 @@ const Hotels = ({ searchData }) => {
         setLoading(false);
       }
     };
+    
 
     fetchHotels();
   }, [searchData]);
@@ -74,7 +77,10 @@ const Hotels = ({ searchData }) => {
             <img
               src={
                 hotel.photos?.length
-                  ? `https://travel-site-sa34.onrender.com${hotel.photos[0].replace(/\\/g, "/")}`
+                  ? `https://travel-site-sa34.onrender.com/${hotel.photos[0].replace(
+                      /\\/g,
+                      "/"
+                    )}`
                   : "/default-image.jpg"
               }
               alt={hotel.name}
@@ -95,6 +101,7 @@ const Hotels = ({ searchData }) => {
                 <span className="separator"> to </span>
                 <span className="max-price">${hotel.maxPrice}</span>
               </p>
+
               <p className="hotel-description">
                 {hotel.description ||
                   "Experience comfort and luxury at our hotel, featuring top-notch services and spacious rooms."}
@@ -109,7 +116,6 @@ const Hotels = ({ searchData }) => {
       ) : (
         <p>No hotels were found for this search.</p>
       )}
-
       <HotelImagesModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
