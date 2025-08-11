@@ -28,7 +28,7 @@ const StripePaymentForm = ({ reservationId, onPaymentSuccess, onPaymentError }) 
 
     try {
  
-      const { data } = await axios.post("http://localhost:5000/api/payment", {
+      const { data } = await axios.post("https://travel-site-sa34.onrender.com/api/payment", {
         amount: parseFloat(amount) * 100,
         email,
         reservationId,

@@ -114,7 +114,7 @@ const ReservationForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/reservations",
+        "https://travel-site-sa34.onrender.com/api/reservations",
         {
           ...formData,
           startDate: formatDate(selectedRange.from),

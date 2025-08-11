@@ -7,7 +7,6 @@ import "./Rooms.css";
 const Rooms = () => {
   const { hotelId } = useParams();
   console.log("🔹 hotelId from URL params:", hotelId);
-
   const [rooms, setRooms] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,7 +21,7 @@ const Rooms = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/hotels/${hotelId}/rooms`
+          `https://travel-site-sa34.onrender.com/api/hotels/${hotelId}/rooms`
         );
         console.log("✅ API response data:", response.data);
 
@@ -114,12 +113,10 @@ const Rooms = () => {
             <div>
               {room.img?.length > 0 ? (
                 <img
-                  src={`http://localhost:5000/${room.img[0].replace(
+                  src={`https://travel-site-sa34.onrender.com/${room.img[0].replace(
                     /\\/g,
                     "/"
                   )}`}
-                  alt={room.title || "Room Image"}
-                  onClick={() => openImageModal(room.img)}
                 />
               ) : (
                 <img
@@ -133,20 +130,20 @@ const Rooms = () => {
               <h3>{room.title || "No title"}</h3>
               <p>{room.details || "No details available"}</p>
               <p className="price">${room.price ?? "N/A"}</p>
-              <p className="room-number">   
+              <p className="room-number">
                 <strong>Room Number:</strong> {room.roomNumber || "Unknown"}
               </p>
               <Link to={bookingLink}>
-                
-                <button  className="nav-button" onClick={() => handleRoomSelection(room)}>
+                <button
+                  className="nav-button"
+                  onClick={() => handleRoomSelection(room)}
+                >
                   Book now
                 </button>
               </Link>
             </div>
           </div>
         );
-
-        
       })}
       <RoomModals
         isImageModalOpen={isImageModalOpen}

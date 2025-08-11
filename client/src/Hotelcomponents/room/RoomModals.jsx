@@ -70,7 +70,7 @@ const RoomModals = ({
                 {currentRoomImages.map((image, index) => (
                   <SwiperSlide key={index}>
                     <img
-                      src={`http://localhost:5000/${image.replace(/\\/g, "/")}`}
+                      src={`https://travel-site-sa34.onrender.com${image.replace(/\\/g, "/")}`}
                       alt={`Room Image ${index + 1}`}
                       className="gallery-image"
                       style={{

@@ -74,7 +74,7 @@ const Hotels = ({ searchData }) => {
             <img
               src={
                 hotel.photos?.length
-                  ? `http://localhost:5000/${hotel.photos[0].replace(/\\/g, "/")}`
+                  ? `https://travel-site-sa34.onrender.com${hotel.photos[0].replace(/\\/g, "/")}`
                   : "/default-image.jpg"
               }
               alt={hotel.name}

@@ -1,4 +1,3 @@
-import React from "react";
 import Modal from "react-modal";
 import "./HotelImagesModal.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -45,7 +44,7 @@ const HotelImagesModal = ({ isOpen, onClose, images = [] }) => {
             images.map((image, index) => (
               <SwiperSlide key={index}>
                 <img
-                  src={`http://localhost:5000/${image.replace(/\\/g, "/")}`}
+                  src={`https://travel-site-sa34.onrender.com${image.replace(/\\/g, "/")}`}
                   alt={`Hotel Image ${index + 1}`}
                   className="gallery-image"
                   style={{ maxWidth: "100%", borderRadius: "8px" }}
