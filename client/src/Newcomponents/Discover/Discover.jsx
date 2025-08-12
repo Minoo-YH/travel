@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Discover.css"
-import Nav from "@Nav"
+import "./discover.css";
+import Nav from "@Nav";
 import Ftr from "../../components/Ftr/Ftr";
-import Searchtrem from "../../components/Search/Searchtrem"
+import Searchtrem from "../../components/Search/Searchtrem";
 import HotelFltring from "../../Hotelcomponents/filter/HotelFltring";
 const Discover = () => {
 

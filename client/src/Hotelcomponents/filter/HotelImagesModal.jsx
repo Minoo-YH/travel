@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import "./HotelImagesModal.css";
+import "./hotelImagesModal.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";

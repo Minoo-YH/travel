@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import HotelImagesModal from "./HotelImagesModal";
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
-import "./HotelFltring.css";
+import "./hotelFltring.css";
 
 const Hotels = ({ searchData }) => {
   const [hotels, setHotels] = useState([]);

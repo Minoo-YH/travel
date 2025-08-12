@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useValue } from "../../Middleware/context/ContextProvider";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import "./Auth.css";
+import "./auth.css";
 
 
 function RegisterLogin() {

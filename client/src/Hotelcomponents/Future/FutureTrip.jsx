@@ -1,12 +1,12 @@
 import React from "react";
 import futureTripCSS from "./FutureTrip.module.css";
-import TravelAnimation from "./TravelAnimation";
 import image3 from "@assets/newyork.jpg";
 import image2 from "@assets/paris.jpg";
 import image1 from "@assets/ski.jpg";
 import image4 from "@assets/island.jpg";
 import image5 from "@assets/boat.jpg";
 import image6 from "@assets/fingirl.jpg";
+import "./futureTrip.module.css"
 
 function FutureTrip() {
   return (

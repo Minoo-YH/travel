@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import RoomModals from "./RoomModals";
-import "./Rooms.css";
+import "./rooms.css";
 
 const Rooms = () => {
   const { hotelId } = useParams();

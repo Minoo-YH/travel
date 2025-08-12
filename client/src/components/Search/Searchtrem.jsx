@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaChevronDown, FaChevronUp, FaStar } from "react-icons/fa";
-import "./Searchtrem.css";
+import "./searchtrem.css";
 
 function Searchtrem({ onSearch }) {
   const [destination, setDestination] = useState("");

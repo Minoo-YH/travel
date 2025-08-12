@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "@Nav";
-import "./Reservation.css";
+import "./reservation.css";
 import Add from "./add";
 import ReservationForm from "../../Hotelcomponents/Reservation/Reservation";
 import Ftr from "../../components/Ftr/Ftr";

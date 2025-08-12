@@ -1,5 +1,5 @@
 import React from "react";
-import "./HotelEachRooms.css";
+import "./hotelEachRooms.css";
 import Part13 from "./part-13";
 import Part12 from "./part-12";
 import Nav from "@Nav";

@@ -5,7 +5,7 @@ import { initializeMap, flyToLocation } from './mapUtils';
 import Nav from "@Nav";
 import { Link } from "react-router-dom";
 import mapboxgl from 'mapbox-gl';
-import "./Map.css" 
+import "./map.css" 
 
 const Map = () => {
   const theme = useTheme();

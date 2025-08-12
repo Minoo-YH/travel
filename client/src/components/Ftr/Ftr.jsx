@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Ftr.css"; 
+import "./ftr.css"; 
 
 const Ftr = () => {
   const color = 'antiquewhite';
