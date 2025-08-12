@@ -40,7 +40,7 @@ const Register = () => {
           setErr("Passwords don't match.");
         } else {
             try {
-              const response = await axios.post('http://localhost:5000/api/auth/register', inputs);
+              const response = await axios.post('https://travel-site-sa34.onrender.com/api/auth/register', inputs);
               console.log(response.data);
               setErr(null);
               alert("Registration successful!"); 

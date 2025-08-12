@@ -28,7 +28,7 @@ const Login = () => {
     setErr(null);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://travel-site-sa34.onrender.com/api/auth/login",
         inputs
       );
       console.log(response.data);
