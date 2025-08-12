@@ -6,7 +6,7 @@ import image1 from "@assets/ski.jpg";
 import image4 from "@assets/island.jpg";
 import image5 from "@assets/boat.jpg";
 import image6 from "@assets/fingirl.jpg";
-import "./ffutureTrip.module.css"
+
 
 function FutureTrip() {
   return (
