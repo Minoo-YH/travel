@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import "./contact.css";
+import "./ccontact.css"
 import Nav from "@Nav";
 import Ftr from "../Ftr/Ftr"
 const Contact = () => {
