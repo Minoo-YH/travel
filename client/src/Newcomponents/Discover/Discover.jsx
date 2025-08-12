@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./discover.css";
+import "./ddiscover.css";
 import Nav from "@Nav";
 import Ftr from "../../components/Ftr/Ftr";
 import Searchtrem from "../../components/Search/Searchtrem";
