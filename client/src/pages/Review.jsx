@@ -22,7 +22,7 @@ function Review() {
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        spaceBetween={20}  // مسافة متساوية بين البطاقات
+        spaceBetween={20}  
         loop={true}
         autoplay={{ delay: 2000, disableOnInteraction: false }}  
         speed={700}  
@@ -58,25 +58,23 @@ const styles = {
     display: "flex",
     justifyContent: "center", 
   },
-  ratingItem: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "30px",
-    backgroundColor: "#fff",
-    borderRadius: "20px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    transition: "transform 0.3s ease-in-out",
-    width: "350px", 
-    minHeight: "250px",
-    textAlign: "center",
-    border: "2px solid antiquewhite",
-    overflow: "hidden",
-    display: "flex",
-    flexDirection: "column",
-    flex: "1",
-  },
+ratingItem: {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  padding: "30px",
+  backgroundColor: "#fff",
+  borderRadius: "20px",
+  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  transition: "transform 0.3s ease-in-out",
+  width: "350px",
+  minHeight: "250px",
+  textAlign: "center",
+  border: "2px solid antiquewhite",
+  overflow: "hidden",
+  flex: "1",
+},
+
   image: {
     width: "80px",
     height: "80px",
