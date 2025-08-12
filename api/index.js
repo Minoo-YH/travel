@@ -26,6 +26,7 @@ const corsOptions = {
   origin: [
     "http://localhost:3000",
     "http://localhost:5173",
+    "https://travel-site-sa34.onrender.com",
     "https://travel-site-1-isyq.onrender.com",
   ],
 
