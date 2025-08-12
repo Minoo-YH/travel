@@ -29,7 +29,10 @@ const Login = () => {
       const response = await axios.post(
         "https://travel-site-sa34.onrender.com/api/auth/login",
         inputs,
-        { withCredentials: true }
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
       );
 
       console.log(response.data);

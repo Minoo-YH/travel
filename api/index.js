@@ -22,9 +22,11 @@ if (!fs.existsSync("uploads")) {
 
 const allowedOrigins = [
   "http://localhost:3000",
+  "https://travel-site-sa34.onrender.com",  
   "http://localhost:5173",
   "https://travel-site-1-isyq.onrender.com",
 ];
+
 
 app.use(cors({
   origin: function(origin, callback) {

@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "./aauth.css";
 
-
 function RegisterLogin() {
   const [isLogin, setIsLogin] = useState(true);
   const location = useLocation();
@@ -22,14 +21,18 @@ function RegisterLogin() {
   };
 
   const handleLoginSuccess = (userData) => {
+    // تخزين التوكن والبيانات
+    sessionStorage.setItem("token", userData.token);
     sessionStorage.setItem("userId", userData.id);
+    sessionStorage.setItem("email", userData.email);
+
     setUser(userData);
     navigate(redirectPath);
   };
 
   useEffect(() => {
-    const userId = localStorage.getItem("userId");
-    if (!userId) {
+    const token = sessionStorage.getItem("token");
+    if (!token) {
       navigate("/RegisterLogin");
     }
   }, [navigate]);
@@ -40,7 +43,6 @@ function RegisterLogin() {
       <div className="auth-container">
         <div className="divider"></div>
 
-   {/* <img src={logiX} alt="logiX" /> */}
         <p>{isLogin ? "Swipe to Register" : "Swipe to Login"}</p>
 
         <div className="auth-forms">
@@ -54,6 +56,7 @@ function RegisterLogin() {
             >
               <SwiperSlide>
                 <div className="auth-form">
+                  {/* تمرير onLoginSuccess هنا */}
                   <Login redirectPath={redirectPath} onLoginSuccess={handleLoginSuccess} />
                 </div>
               </SwiperSlide>
