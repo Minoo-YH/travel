@@ -46,11 +46,11 @@ export const register = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({
-      success: false,
-      message: "Server error. Please try again later.",
-    });
+  console.error("❌ Registration Error:", error); // يطبع الخطأ كامل في Render Logs
+  return res.status(500).json({
+    success: false,
+    message: error.message || "Server error. Please try again later.",
+  });
   }
 };
 
