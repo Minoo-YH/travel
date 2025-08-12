@@ -28,21 +28,48 @@ const allowedOrigins = [
   "https://travel-site-1-isyq.onrender.com", 
 ];
 
-const corsOptions = {
+app.use(cors({
   origin: function(origin, callback) {
-    if (!origin) return callback(null, true); 
+    if (!origin) return callback(null, true);
     if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: false
-}
+  credentials: true
+}));
+
 
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+
+
+
+app.use((req, res, next) => {
+  // بعد إرسال الرد نطبع الهيدرز
+  const originalSend = res.send;
+  res.send = function (...args) {
+    console.log("=== Response Headers ===");
+    console.log("Access-Control-Allow-Origin:", res.getHeader("Access-Control-Allow-Origin"));
+    console.log("Access-Control-Allow-Credentials:", res.getHeader("Access-Control-Allow-Credentials"));
+    console.log("========================");
+    originalSend.apply(res, args);
+  };
+  next();
+});
+
+
+
+
+
+
+
+
+
 
 // Get current directory for static uploads
 const __filename = fileURLToPath(import.meta.url);
