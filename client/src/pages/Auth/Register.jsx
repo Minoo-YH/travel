@@ -3,7 +3,7 @@ import axios from "axios";
 import { useValue } from "../../Middleware/context/ContextProvider";
 import { useNavigate } from "react-router-dom";
 import CountrySelect from "./CountrySelect";
-import "./register.css";
+import "./Register.css";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
