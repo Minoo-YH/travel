@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useValue } from "../../Middleware/context/ContextProvider";
 
-
 const Login = () => {
   const [inputs, setInputs] = useState({
     emailOrPhone: "",
@@ -29,8 +28,10 @@ const Login = () => {
     try {
       const response = await axios.post(
         "https://travel-site-sa34.onrender.com/api/auth/login",
-        inputs
+        inputs,
+        { withCredentials: true }
       );
+
       console.log(response.data);
 
       if (response.data.success) {
@@ -53,11 +54,11 @@ const Login = () => {
   };
 
   return (
-    <div >
-      <div >
-        <h2 >Login</h2>
+    <div>
+      <div>
+        <h2>Login</h2>
         <form onSubmit={handleLogin}>
-          <label >Email/Phone Number</label>
+          <label>Email/Phone Number</label>
           <input
             type="text"
             placeholder="Email or Phone Number"

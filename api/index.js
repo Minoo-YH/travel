@@ -16,32 +16,29 @@ import { fileURLToPath } from "url";
 dotenv.config();
 const app = express();
 
-// إنشاء مجلد "uploads" إذا لم يكن موجوداً
+
 if (!fs.existsSync("uploads")) {
   fs.mkdirSync("uploads");
 }
 
-// CORS options - حدد الـ origins المسموحة فقط
+
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5173",
-  "https://travel-site-sa34.onrender.com",   // backend (يمكن تحذفها لو غير مطلوب)
-  "https://travel-site-1-isyq.onrender.com", // frontend deployed
+  "https://travel-site-1-isyq.onrender.com", 
 ];
 
 const corsOptions = {
-  origin: function (origin, callback) {
-    // السماح للطلبات بدون origin (مثل Postman أو curl)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) !== -1) {
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); 
+    if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-};
+  credentials: false
+}
 
 app.use(cors(corsOptions));
 app.use(express.json());
