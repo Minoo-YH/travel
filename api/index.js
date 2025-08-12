@@ -16,16 +16,14 @@ import { fileURLToPath } from "url";
 dotenv.config();
 const app = express();
 
-
 if (!fs.existsSync("uploads")) {
   fs.mkdirSync("uploads");
 }
 
-
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5173",
-  "https://travel-site-1-isyq.onrender.com", 
+  "https://travel-site-1-isyq.onrender.com",
 ];
 
 app.use(cors({
@@ -40,17 +38,8 @@ app.use(cors({
   credentials: true
 }));
 
-
-app.use(cors(corsOptions));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-
-
-
-
+// Middleware لطباعة هيدرز CORS للردود
 app.use((req, res, next) => {
-  // بعد إرسال الرد نطبع الهيدرز
   const originalSend = res.send;
   res.send = function (...args) {
     console.log("=== Response Headers ===");
@@ -62,14 +51,8 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
-
-
-
-
-
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Get current directory for static uploads
 const __filename = fileURLToPath(import.meta.url);
