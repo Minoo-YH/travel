@@ -3,7 +3,7 @@ import headerCSS from "./Header.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Autoplay, Parallax } from "swiper/modules";
-import "./hheader.module.css"
+import "./Header.module.css"
 
 const display = {
   delay: 2500,
