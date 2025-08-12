@@ -7,7 +7,7 @@ import StripePaymentForm from "../Payment/StripePaymentForm";
 import { Calendar } from "@hassanmojab/react-modern-calendar-datepicker";
 import "@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css";
 import { FaCalendarAlt } from "react-icons/fa";
-import "./reservation.css";
+import "./rrseservation.css";
 
 const customStyles = {
   content: {
