@@ -22,18 +22,12 @@ if (!fs.existsSync("uploads")) {
 }
 
 // Middleware
-const corsOptions = {
-  origin: [
-    "http://localhost:3000",          // React dev
-    "http://localhost:5173",          // Vite dev
-    "https://travel-site-sa34.onrender.com", // Backend on Render
-    "https://travel-site-1-isyq.onrender.com" // Frontend on Render
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-};
+app.use(cors({
+  origin: "*",
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+}));
 
-app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
