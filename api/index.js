@@ -21,21 +21,35 @@ if (!fs.existsSync("uploads")) {
   fs.mkdirSync("uploads");
 }
 
-// Middleware
-app.use(cors({
-  origin: "*",
-  methods: "GET,POST,PUT,DELETE",
-  credentials: true
-}));
+// CORS options - حدد الـ origins المسموحة فقط
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "https://travel-site-sa34.onrender.com",   // backend (يمكن تحذفها لو غير مطلوب)
+  "https://travel-site-1-isyq.onrender.com", // frontend deployed
+];
 
+const corsOptions = {
+  origin: function (origin, callback) {
+    // السماح للطلبات بدون origin (مثل Postman أو curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Get the current directory in ES module environment
+// Get current directory for static uploads
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// Static files for uploads
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
