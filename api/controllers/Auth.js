@@ -55,53 +55,74 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const { emailOrPhone, password } = req.body;
+  console.log("=== Login API Called ===");
+  console.log("Body:", req.body);
 
-  if (!emailOrPhone || !password) {
-    return res.status(400).json({
-      success: false,
-      message: "Email or phone number and password are required",
+  try {
+    const { emailOrPhone, password } = req.body;
+    console.log("Step 1: Input received");
+
+    if (!emailOrPhone || !password) {
+      console.log("Step 2: Missing credentials");
+      return res.status(400).json({
+        success: false,
+        message: "Email or phone number and password are required",
+      });
+    }
+
+    const isEmail = emailOrPhone.includes("@");
+    const query = isEmail
+      ? { email: emailOrPhone.toLowerCase() }
+      : { phoneNumber: emailOrPhone };
+
+    console.log("Step 3: Query:", query);
+
+    const existedUser = await User.findOne(query);
+    console.log("Step 4: User found:", existedUser);
+
+    if (!existedUser) {
+      console.log("Step 5: User does not exist");
+      return res.status(404).json({
+        success: false,
+        message: "User does not exist!",
+      });
+    }
+
+    const correctPassword = await bcrypt.compare(password, existedUser.password);
+    console.log("Step 6: Password match:", correctPassword);
+
+    if (!correctPassword) {
+      console.log("Step 7: Wrong password");
+      return res.status(400).json({
+        success: false,
+        message: "Invalid credentials",
+      });
+    }
+
+    const { _id: id, name } = existedUser;
+    const token = jwt.sign({ id, name }, process.env.JWT_SECRET, {
+      expiresIn: "24h",
     });
-  }
+    console.log("Step 8: Token generated");
 
-  const isEmail = emailOrPhone.includes("@");
-  const query = isEmail
-    ? { email: emailOrPhone.toLowerCase() }
-    : { phoneNumber: emailOrPhone };
-
-  const existedUser = await User.findOne(query);
-  if (!existedUser) {
-    return res.status(404).json({
-      success: false,
-      message: "User does not exist!",
+    res.status(200).json({
+      success: true,
+      result: {
+        id,
+        name,
+        email: existedUser.email,
+        phoneNumber: existedUser.phoneNumber,
+        token,
+      },
     });
+
+    console.log("Step 9: Response sent");
+  } catch (err) {
+    console.error("Step X: Error:", err);
+    res.status(500).json({ success: false, message: "Server error" });
   }
-
-  const correctPassword = await bcrypt.compare(password, existedUser.password);
-  if (!correctPassword) {
-    return res.status(400).json({
-      success: false,
-      message: "Invalid credentials",
-    });
-  }
-
-  const { _id: id, name: name } = existedUser;
-  const token = jwt.sign({ id, name }, process.env.JWT_SECRET, {
-    expiresIn: "24h",
-  });
-
-
-  res.status(200).json({
-    success: true,
-    result: {
-      id,
-      name,
-      email: existedUser.email,
-      phoneNumber: existedUser.phoneNumber,
-      token,
-    },
-  });
 };
+
 
 
 export  const getUsers= async (req, res) => {
