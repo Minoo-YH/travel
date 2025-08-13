@@ -15,6 +15,7 @@ import UpdateProfile from "./pages/user/UpdateProfile";
 import Map from "./pages/Map/Map";
 import Contact from "./components/contact/Contact";
 
+import GlobalStyles from "./GlobalStyles";
 
 const stripePromise = loadStripe(
   "pk_test_51QFvkhLAzYW8YRzjlm4VYKp19bMXpFMoHcCsHM3wda661NR4YOjHO2iyXMrDZmNqKfGUNXD5neKjeUmt1mTClIgc00RBYWEAAX"
@@ -30,6 +31,7 @@ function App() {
   return (
     <div>
       <div className="container">
+        <GlobalStyles />
         <Elements stripe={stripePromise}>
           <Routes>
 
