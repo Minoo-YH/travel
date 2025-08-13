@@ -1,19 +1,19 @@
 // src/GlobalStyles.jsx
 
 // Hotelcomponents
-import "./Hotelcomponents/filter/hhotelFltring.css";
-import "./Hotelcomponents/filter/hhotelImagesModal.css";
-import "./Hotelcomponents/Future/FutureTrip.module.css";
-import "./Hotelcomponents/Payment/sstripePaymentForm.css";
-import "./Hotelcomponents/Reservation/rrseservation.css";
-import "./Hotelcomponents/room/rroomModel.css";
-import "./Hotelcomponents/room/rrooms.css";
+import "../Hotelcomponents/filter/hhotelFltring.css";
+import "../Hotelcomponents/filter/hhotelImagesModal.css";
+import "../Hotelcomponents/Future/FutureTrip.module.css";
+import "../Hotelcomponents/Payment/sstripePaymentForm.css";
+import "../Hotelcomponents/Reservation/rrseservation.css";
+import "../Hotelcomponents/room/rroomModel.css";
+import "../Hotelcomponents/room/rrooms.css";
 
 // Newcomponents
-import "./Newcomponents/Discover/ddiscover.css";
-import "./Newcomponents/Reservation/add.css";
-import "./Newcomponents/Reservation/rreservation.css";
-import "./Newcomponents/RoomsHo/hhotelEachRooms.css";
+import "../Newcomponents/Discover/ddiscover.css";
+import "../Newcomponents/Reservation/add.css";
+import "../Newcomponents/Reservation/rreservation.css";
+import "../Newcomponents/RoomsHo/hhotelEachRooms.css";
 
 export default function GlobalStyles() {
   return null; // ما نعرض أي شيء، الهدف بس استيراد CSS
