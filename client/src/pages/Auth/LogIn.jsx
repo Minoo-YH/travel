@@ -27,7 +27,7 @@ const Login = () => {
     setErr(null);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://my-backend.onrender.com/api/auth/login",
         inputs,
         {
           headers: { "Content-Type": "application/json" },
