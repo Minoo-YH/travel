@@ -1,0 +1,73 @@
+import Room from "../models/Room.js";
+/**
+ * POST /api/hotels/:hotelId/rooms
+ * expects: body { roomType, roomNumber, price, description, ... }
+ * if upload middleware used: req.files -> images paths
+ */
+export const createRoom = async (req, res, next) => {
+  try {
+    const { hotelId } = req.params;
+    if (!hotelId) {
+      return res.status(400).json({ message: "hotelId param is required" });
+    }
+
+    const images = Array.isArray(req.files) ? req.files.map(f => f.path) : [];
+    const roomData = {
+      hotelId,
+      ...req.body,
+    };
+    if (images.length) roomData.images = images;
+
+    const room = await Room.create(roomData);
+    return res.status(201).json({ success: true, room });
+  } catch (err) {
+    next(err);
+  }
+};
+
+/** GET /api/hotels/:hotelId/rooms  */
+export const getHotelRooms = async (req, res, next) => {
+  try {
+    const { hotelId } = req.params;
+    const rooms = await Room.find({ hotelId });
+    return res.status(200).json(rooms);
+  } catch (err) {
+    next(err);
+  }
+};
+
+/** GET /api/hotels/:hotelId/rooms/:roomid */
+export const getRooms = async (req, res, next) => {
+  try {
+    const { roomid } = req.params;
+    const room = await Room.findById(roomid);
+    if (!room) return res.status(404).json({ message: "Room not found" });
+    return res.status(200).json(room);
+  } catch (err) {
+    next(err);
+  }
+};
+
+/** PUT /api/hotels/:hotelId/rooms/:roomid */
+export const updateRoom = async (req, res, next) => {
+  try {
+    const { roomid } = req.params;
+    const updated = await Room.findByIdAndUpdate(roomid, { $set: req.body }, { new: true });
+    if (!updated) return res.status(404).json({ message: "Room not found" });
+    return res.status(200).json(updated);
+  } catch (err) {
+    next(err);
+  }
+};
+
+/** DELETE /api/hotels/:hotelId/rooms/:roomid */
+export const deleteRoom = async (req, res, next) => {
+  try {
+    const { roomid } = req.params;
+    const deleted = await Room.findByIdAndDelete(roomid);
+    if (!deleted) return res.status(404).json({ message: "Room not found" });
+    return res.status(200).json({ success: true, message: "Room deleted" });
+  } catch (err) {
+    next(err);
+  }
+};

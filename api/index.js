@@ -1,72 +1,59 @@
-import express from "express";
-import dotenv from "dotenv";
-import fs from "fs";
-import cors from "cors";
+import 'dotenv/config';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import compression from 'compression';
+import morgan from 'morgan';
+import mailRouter from './routes/mailTest.js';
+import { startServer } from './database.js';
 
-import { startServer } from "./database.js";
-import roomRoutes from "./routes/Room.js";
-import authRoutes from "./routes/Auth.js";
-import hotelRoutes from "./routes/Hotel.js";
-import reservationRoutes from "./routes/Reservation.js";
-import GetUsers from "./routes/Auth.js";
-import processPayment from "./routes/payment.js";
-import path from "path";
-import { fileURLToPath } from "url";
+import authRoutes from './routes/Auth.js';
+import hotelRoutes from './routes/Hotel.js';
+import roomRoutes from './routes/Room.js';
+import reservationRoutes from './routes/Reservation.js';
+import paymentRoutes from './routes/payment.js';
 
-dotenv.config();
 const app = express();
 
-if (!fs.existsSync("uploads")) {
-  fs.mkdirSync("uploads");
-}
+// پوشه آپلود
+if (!fs.existsSync('uploads')) fs.mkdirSync('uploads');
 
-const allowedOrigins = [
-  "http://localhost:3000",
-  "http://localhost:5173",
-  "https://travel-site-1-isyq.onrender.com",  
-  "https://travel-site-sa34.onrender.com",
-];
+app.use(helmet());
+app.use(compression());
+app.use(morgan('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+// CORS
+const allowedOrigins = (process.env.CORS_ORIGIN || '').split(',').filter(Boolean);
 app.use(cors({
-  origin: function(origin, callback) {
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
+  origin: (origin, cb) => {
+    if (!origin) return cb(null, true);
+    if (!allowedOrigins.length || allowedOrigins.includes(origin)) return cb(null, true);
+    return cb(new Error('Not allowed by CORS'));
   },
   credentials: true
 }));
 
-// Middleware لطباعة هيدرز CORS للردود
-app.use((req, res, next) => {
-  const originalSend = res.send;
-  res.send = function (...args) {
-    console.log("=== Response Headers ===");
-    console.log("Access-Control-Allow-Origin:", res.getHeader("Access-Control-Allow-Origin"));
-    console.log("Access-Control-Allow-Credentials:", res.getHeader("Access-Control-Allow-Credentials"));
-    console.log("========================");
-    originalSend.apply(res, args);
-  };
-  next();
-});
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Get current directory for static uploads
+// فایل‌های استاتیک uploads
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/", GetUsers);
-app.use("/api/hotels", hotelRoutes);
-app.use("/api/hotels", roomRoutes);
-app.use("/api/reservations", reservationRoutes);
-app.use("/api/payment", processPayment);
+// روت‌ها
+app.use('/api/auth', authRoutes);
+app.use('/api/hotels', hotelRoutes);
+app.use('/api/hotels', roomRoutes);          // rooms زیرمجموعه hotels
+app.use('/api/reservations', reservationRoutes);
+app.use('/api/payment', paymentRoutes);
 
-// Start Server
+// health
+app.get('/health', (_, res) => res.json({ ok: true }));
+
+// استارت
 startServer(app);
+
+app.use('/api/mail', mailRouter);
