@@ -28,7 +28,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // CORS
-const allowedOrigins = (process.env.CORS_ORIGIN || '').split(',').filter(Boolean);
+const allowedOrigins = (process.env.CORS_ORIGIN || '')
+.split(",")
+  .map(s => s.trim())
+  .filter(Boolean);
 app.use(cors({
   origin: (origin, cb) => {
     if (!origin) return cb(null, true);
