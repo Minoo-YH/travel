@@ -1,0 +1,31 @@
+﻿services:
+  - type: web
+    name: travel-api
+    env: node
+    plan: free
+    rootDir: api
+    buildCommand: npm ci
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      # این‌ها را بعداً در Dashboard مقدار می‌دهیم (Secrets):
+      - key: MONGO_URL
+      - key: JWT_SECRET
+      - key: STRIPE_SECRET
+      - key: MAIL_HOST
+      - key: MAIL_PORT
+      - key: MAIL_USER
+      - key: MAIL_PASS
+      - key: MAIL_TO
+      - key: CORS_ORIGINS
+  - type: static
+    name: travel-client
+    plan: free
+    rootDir: client
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE
+        value: https://travel-api.onrender.com
