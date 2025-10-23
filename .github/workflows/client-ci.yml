@@ -1,4 +1,4 @@
-﻿name: Client CI
+name: Client CI
 on:
   push:
     paths:

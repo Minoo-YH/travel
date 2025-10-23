@@ -1,4 +1,4 @@
-﻿name: API CI
+name: API CI
 on:
   push:
     paths:
