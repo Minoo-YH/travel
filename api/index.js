@@ -1,4 +1,4 @@
-import 'dotenv/config';
+﻿import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -18,7 +18,7 @@ import paymentRoutes from './routes/payment.js';
 
 const app = express();
 
-// پوشه آپلود
+// Ù¾ÙˆØ´Ù‡ Ø¢Ù¾Ù„ÙˆØ¯
 if (!fs.existsSync('uploads')) fs.mkdirSync('uploads');
 
 app.use(helmet());
@@ -32,31 +32,36 @@ const allowedOrigins = (process.env.CORS_ORIGIN || '')
 .split(",")
   .map(s => s.trim())
   .filter(Boolean);
+const origins = (process.env.CORS_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
 app.use(cors({
   origin: (origin, cb) => {
     if (!origin) return cb(null, true);
-    if (!allowedOrigins.length || allowedOrigins.includes(origin)) return cb(null, true);
-    return cb(new Error('Not allowed by CORS'));
+    if (origins.length === 0 || origins.includes(origin)) return cb(null, true);
+    cb(new Error('Not allowed by CORS: ' + origin));
+  },
+  credentials: true
+}));
   },
   credentials: true
 }));
 
-// فایل‌های استاتیک uploads
+// ÙØ§ÛŒÙ„â€ŒÙ‡Ø§ÛŒ Ø§Ø³ØªØ§ØªÛŒÚ© uploads
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// روت‌ها
+// Ø±ÙˆØªâ€ŒÙ‡Ø§
 app.use('/api/auth', authRoutes);
 app.use('/api/hotels', hotelRoutes);
-app.use('/api/hotels', roomRoutes);          // rooms زیرمجموعه hotels
+app.use('/api/hotels', roomRoutes);          // rooms Ø²ÛŒØ±Ù…Ø¬Ù…ÙˆØ¹Ù‡ hotels
 app.use('/api/reservations', reservationRoutes);
 app.use('/api/payment', paymentRoutes);
 
 // health
 app.get('/health', (_, res) => res.json({ ok: true }));
 
-// استارت
+// Ø§Ø³ØªØ§Ø±Øª
 startServer(app);
 
 app.use('/api/mail', mailRouter);
+
