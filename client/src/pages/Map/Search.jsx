@@ -1,4 +1,4 @@
-import axios from 'axios';
+﻿import axios from 'axios';
 
 const MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoiYWJkdWxsYWgyMi0yMiIsImEiOiJjbWUybXpuZDcwazQ1MmpzYTBzdWYwZ2ZzIn0.wW1je6mRQw6d8QipgNio2g";
 
@@ -18,3 +18,6 @@ export const fetchHotelsByCity = async (searchQuery) => {
   });
   return response.data;
 };
+
+
+

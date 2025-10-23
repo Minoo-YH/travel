@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Modal from "react-modal";
 import "./hhotelImagesModal.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -74,3 +74,6 @@ const HotelImagesModal = ({ isOpen, onClose, images = [] }) => {
 };
 
 export default HotelImagesModal;
+
+
+

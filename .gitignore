@@ -1,0 +1,25 @@
+# Node stuff
+node_modules/
+npm-debug.log*
+pnpm-lock.yaml
+yarn.lock
+dist/
+build/
+.cache/
+.vite/
+coverage/
+
+# Env files
+*.env
+api/.env
+client/.env
+
+# Uploads & generated/media
+api/uploads/
+client/public/assets/generated/
+
+# OS/editor junk & backups
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp

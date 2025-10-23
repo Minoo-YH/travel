@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Autoplay, Parallax } from "swiper/modules";
@@ -37,7 +37,7 @@ function Review() {
                 <h3 style={styles.name}>{person.name}</h3>
                 <p style={styles.comment}>{person.comment}</p>
                 <div style={styles.stars}>
-                  {"★".repeat(person.stars)}{"☆".repeat(5 - person.stars)}
+                  {"â˜…".repeat(person.stars)}{"â˜†".repeat(5 - person.stars)}
                 </div>
               </div>
             </div>
@@ -61,7 +61,7 @@ const styles = {
 ratingItem: {
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-between",
+  // removed duplicate -> justifyContent: "space-between",
   padding: "30px",
   backgroundColor: "#fff",
   borderRadius: "20px",
@@ -86,7 +86,7 @@ ratingItem: {
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    // removed duplicate -> justifyContent: "center",
   },
   name: {
     fontSize: "18px",
@@ -107,3 +107,6 @@ ratingItem: {
 };
 
 export default Review;
+
+
+

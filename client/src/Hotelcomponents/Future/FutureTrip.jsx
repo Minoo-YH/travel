@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import futureTripCSS from "./FutureTrip.module.css";
 import image3 from "@assets/newyork.jpg";
 import image2 from "@assets/paris.jpg";
@@ -38,3 +38,6 @@ function FutureTrip() {
 }
 
 export default FutureTrip;
+
+
+

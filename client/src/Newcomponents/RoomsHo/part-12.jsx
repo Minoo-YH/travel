@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 
 const Part12 = ({ hotelId }) => {
   const [hotel, setHotel] = useState(null);
@@ -49,7 +49,7 @@ const styles = {
   hotelInfo: {
     display: "flex",
     flexDirection: "row",  
-    justifyContent: "flex-start",  
+    // removed duplicate -> justifyContent: "flex-start",  
     gap: "10px", 
     flexWrap: "nowrap",  
     
@@ -64,7 +64,7 @@ const styles = {
   hotelInfo1: {
     fontSize: "14px",
     fontWeight: "normal", 
-    fontFamily: "'Tahoma', sans-serif", // اختيار خط أخف
+    fontFamily: "'Tahoma', sans-serif", // Ø§Ø®ØªÙŠØ§Ø± Ø®Ø· Ø£Ø®Ù
     color: "black", 
     display: "flex", // Ensure the country, city, and price appear in one line
     flexDirection: "row",  // Align them horizontally
@@ -75,3 +75,5 @@ const styles = {
 };
 
 export default Part12;
+
+

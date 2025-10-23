@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+﻿import React, { useState, useRef, useEffect } from "react";
 import { FaChevronDown, FaChevronUp, FaStar } from "react-icons/fa";
 import "./ssearchtrem.css";
 
@@ -115,3 +115,6 @@ function Searchtrem({ onSearch }) {
 }
 
 export default Searchtrem;
+
+
+

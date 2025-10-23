@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import axios from "axios";
 import { useValue } from "../../Middleware/context/ContextProvider";
 import { useNavigate } from "react-router-dom";
@@ -104,3 +104,6 @@ const Register = () => {
 };
 
 export default Register;
+
+
+

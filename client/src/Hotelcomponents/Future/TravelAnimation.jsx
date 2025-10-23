@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+﻿import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import styled from "styled-components";
@@ -48,17 +48,17 @@ function TravelAnimation() {
       (error) => console.error("Error loading model:", error)
     );
 
-    // 🎯 منحنى بيزيه لحركة الطائرة
+    // ðŸŽ¯ Ù…Ù†Ø­Ù†Ù‰ Ø¨ÙŠØ²ÙŠÙ‡ Ù„Ø­Ø±ÙƒØ© Ø§Ù„Ø·Ø§Ø¦Ø±Ø©
     const curve = new THREE.CatmullRomCurve3([
-      new THREE.Vector3(-5, 3, 5),  // 🟢 نقطة البداية (x-, y+)
-      new THREE.Vector3(-2, -1, 3), // 🔽 النزول إلى المنتصف
-      new THREE.Vector3(2, 5, 0),   // 🔼 الصعود إلى اليسار
-      new THREE.Vector3(-5, 3, 5)   // 🔄 العودة للبداية لإكمال الحلقة
-    ], true); // ⚠️ "true" تعني أن المسار مغلق ويكرر نفسه تلقائياً
+      new THREE.Vector3(-5, 3, 5),  // ðŸŸ¢ Ù†Ù‚Ø·Ø© Ø§Ù„Ø¨Ø¯Ø§ÙŠØ© (x-, y+)
+      new THREE.Vector3(-2, -1, 3), // ðŸ”½ Ø§Ù„Ù†Ø²ÙˆÙ„ Ø¥Ù„Ù‰ Ø§Ù„Ù…Ù†ØªØµÙ
+      new THREE.Vector3(2, 5, 0),   // ðŸ”¼ Ø§Ù„ØµØ¹ÙˆØ¯ Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±
+      new THREE.Vector3(-5, 3, 5)   // ðŸ”„ Ø§Ù„Ø¹ÙˆØ¯Ø© Ù„Ù„Ø¨Ø¯Ø§ÙŠØ© Ù„Ø¥ÙƒÙ…Ø§Ù„ Ø§Ù„Ø­Ù„Ù‚Ø©
+    ], true); // âš ï¸ "true" ØªØ¹Ù†ÙŠ Ø£Ù† Ø§Ù„Ù…Ø³Ø§Ø± Ù…ØºÙ„Ù‚ ÙˆÙŠÙƒØ±Ø± Ù†ÙØ³Ù‡ ØªÙ„Ù‚Ø§Ø¦ÙŠØ§Ù‹
 
     const clock = new THREE.Clock();
     let t = 0; 
-    let speed = 0.002; // سرعة الحركة
+    let speed = 0.002; // Ø³Ø±Ø¹Ø© Ø§Ù„Ø­Ø±ÙƒØ©
 
     const animate = () => {
       requestAnimationFrame(animate);
@@ -66,12 +66,12 @@ function TravelAnimation() {
 
       if (airplane) {
         t += speed; 
-        if (t >= 1) t = 0; // 🔄 إعادة `t` إلى `0` لجعل الحركة تتكرر
+        if (t >= 1) t = 0; // ðŸ”„ Ø¥Ø¹Ø§Ø¯Ø© `t` Ø¥Ù„Ù‰ `0` Ù„Ø¬Ø¹Ù„ Ø§Ù„Ø­Ø±ÙƒØ© ØªØªÙƒØ±Ø±
 
-        const position = curve.getPoint(t); // 📍 تحديد الموقع الحالي
+        const position = curve.getPoint(t); // ðŸ“ ØªØ­Ø¯ÙŠØ¯ Ø§Ù„Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø­Ø§Ù„ÙŠ
         airplane.position.copy(position);
 
-        const tangent = curve.getTangent(t).normalize(); // 📏 حساب الاتجاه
+        const tangent = curve.getTangent(t).normalize(); // ðŸ“ Ø­Ø³Ø§Ø¨ Ø§Ù„Ø§ØªØ¬Ø§Ù‡
         const lookAtPosition = position.clone().add(tangent); 
         airplane.lookAt(lookAtPosition);
       }
@@ -90,3 +90,6 @@ function TravelAnimation() {
 }
 
 export default TravelAnimation;
+
+
+

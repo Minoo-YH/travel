@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import HotelImagesModal from "./HotelImagesModal";
@@ -22,7 +22,7 @@ const Hotels = ({ searchData }) => {
       try {
         let url = "https://travel-site-sa34.onrender.com/api/hotels/filter";
         let params = {
-          city: searchData.destination.trim(), // إزالة أي مسافات غير مرئية
+          city: searchData.destination.trim(), // Ø¥Ø²Ø§Ù„Ø© Ø£ÙŠ Ù…Ø³Ø§ÙØ§Øª ØºÙŠØ± Ù…Ø±Ø¦ÙŠØ©
           maxPrice: searchData.priceRange[1],
         };
     
@@ -30,7 +30,7 @@ const Hotels = ({ searchData }) => {
           params.rating = Number(searchData.rating);
         }
     
-        console.log("🚀 Fetching hotels with params:", params);
+        console.log("ðŸš€ Fetching hotels with params:", params);
         const response = await axios.get(url, { params });
     
         setHotels(response.data);
@@ -126,3 +126,5 @@ const Hotels = ({ searchData }) => {
 };
 
 export default Hotels;
+
+

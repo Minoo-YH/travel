@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import "./ccontact.css"
 import Nav from "@Nav";
@@ -27,7 +27,7 @@ const Contact = () => {
       <div className="contact-container">
         <div className="contact-content">
           <h1 className="title">
-            <span className="icon-envelope">📧</span> Contact Us
+            <span className="icon-envelope">ðŸ“§</span> Contact Us
           </h1>
           <small className="sub-title">
             We're here to help you with any inquiries!
@@ -79,3 +79,6 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+

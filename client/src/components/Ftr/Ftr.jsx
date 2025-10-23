@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import "./Ftr.css"; 
 
@@ -29,7 +29,7 @@ const Ftr = () => {
 
         <div className="sb__footer-below">
           <div className="sb__footer-copyright">
-            <p>© {new Date().getFullYear()} Traveler. All rights reserved.</p>
+            <p>Â© {new Date().getFullYear()} Traveler. All rights reserved.</p>
           </div>
           <div className="sb__footer-below-links">
             <p>Terms & Conditions</p>
@@ -45,3 +45,6 @@ const Ftr = () => {
 };
 
 export default Ftr;
+
+
+

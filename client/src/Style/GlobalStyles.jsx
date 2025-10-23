@@ -1,4 +1,4 @@
-// src/GlobalStyles.jsx
+﻿// src/GlobalStyles.jsx
 
 // Hotelcomponents
 import "../Hotelcomponents/filter/hhotelFltring.css";
@@ -16,5 +16,8 @@ import "../Newcomponents/Reservation/rreservation.css";
 import "../Newcomponents/RoomsHo/hhotelEachRooms.css";
 
 export default function GlobalStyles() {
-  return null; // ما نعرض أي شيء، الهدف بس استيراد CSS
+  return null; // Ù…Ø§ Ù†Ø¹Ø±Ø¶ Ø£ÙŠ Ø´ÙŠØ¡ØŒ Ø§Ù„Ù‡Ø¯Ù Ø¨Ø³ Ø§Ø³ØªÙŠØ±Ø§Ø¯ CSS
 }
+
+
+

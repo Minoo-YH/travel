@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { Box, TextField, Button, Typography, useTheme } from '@mui/material';
 import { fetchCityCoordinates, fetchHotelsByCity } from './Search';
 import { initializeMap, flyToLocation } from './mapUtils';
@@ -159,3 +159,6 @@ const Map = () => {
 };
 
 export default Map;
+
+
+

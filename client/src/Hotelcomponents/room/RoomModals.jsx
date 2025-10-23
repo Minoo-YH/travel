@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+﻿import React, { useRef } from "react";
 import Modal from "react-modal";
 import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -108,3 +108,6 @@ const RoomModals = ({
 };
 
 export default RoomModals;
+
+
+

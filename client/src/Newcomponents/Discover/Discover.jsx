@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import "./ddiscover.css";
 import Nav from "@Nav";
 import Ftr from "../../components/Ftr/Ftr";
@@ -33,3 +33,5 @@ const Discover = () => {
 };
 
 export default Discover;
+
+

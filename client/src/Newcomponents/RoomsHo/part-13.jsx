@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 
 const RatingList = [
   {
@@ -47,7 +47,7 @@ const Part13 = () => {
             <h3 style={styles.name}>{person.name}</h3>
             <p style={styles.comment}>{person.comment}</p>
             <div style={styles.stars}>
-              {"★".repeat(person.stars)} {"☆".repeat(5 - person.stars)}
+              {"â˜…".repeat(person.stars)} {"â˜†".repeat(5 - person.stars)}
             </div>
           </div>
         </div>
@@ -64,9 +64,9 @@ const styles = {
     padding: "5px",
     height: "100%",
     width: "100%",
-    overflowx: "auto",
+    overflowX: "auto",
     writingMode: "horizontal-tb",
-    justifyContent: "space-between",
+    // removed duplicate -> justifyContent: "space-between",
     backgroundColor: "white",
     border: "none",
   },
@@ -89,7 +89,7 @@ const styles = {
   textContainer: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    // removed duplicate -> justifyContent: "center",
   },
   name: {
     fontSize: "16px",
@@ -108,3 +108,6 @@ const styles = {
 };
 
 export default Part13;
+
+
+

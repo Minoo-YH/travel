@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import Register from "./Register";
 import Login from "./LogIn";
 import Nav from "@Nav";
@@ -21,7 +21,7 @@ function RegisterLogin() {
   };
 
   const handleLoginSuccess = (userData) => {
-    // تخزين التوكن والبيانات
+    // ØªØ®Ø²ÙŠÙ† Ø§Ù„ØªÙˆÙƒÙ† ÙˆØ§Ù„Ø¨ÙŠØ§Ù†Ø§Øª
     sessionStorage.setItem("token", userData.token);
     sessionStorage.setItem("userId", userData.id);
     sessionStorage.setItem("email", userData.email);
@@ -56,7 +56,7 @@ function RegisterLogin() {
             >
               <SwiperSlide>
                 <div className="auth-form">
-                  {/* تمرير onLoginSuccess هنا */}
+                  {/* ØªÙ…Ø±ÙŠØ± onLoginSuccess Ù‡Ù†Ø§ */}
                   <Login redirectPath={redirectPath} onLoginSuccess={handleLoginSuccess} />
                 </div>
               </SwiperSlide>
@@ -74,3 +74,6 @@ function RegisterLogin() {
 }
 
 export default RegisterLogin;
+
+
+

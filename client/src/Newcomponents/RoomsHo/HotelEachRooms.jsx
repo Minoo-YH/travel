@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import "./hhotelEachRooms.css";
 import Part13 from "./part-13";
 import Part12 from "./part-12";
@@ -30,3 +30,5 @@ const HotelEachRooms = () => {
 };
 
 export default HotelEachRooms;
+
+

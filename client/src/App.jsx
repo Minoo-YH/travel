@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
@@ -78,3 +78,6 @@ function App() {
 
 
 export default App;
+
+
+

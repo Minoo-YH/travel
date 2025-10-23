@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+﻿import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import Modal from "react-modal";
@@ -184,7 +184,7 @@ const ReservationForm = () => {
             <p>
               <strong>Selected Dates:</strong>{" "}
               {`${selectedRange.from.day}/${selectedRange.from.month}/${selectedRange.from.year}`}{" "}
-              →{" "}
+              â†’{" "}
               {`${selectedRange.to.day}/${selectedRange.to.month}/${selectedRange.to.year}`}
             </p>
           )}
@@ -251,3 +251,5 @@ const ReservationForm = () => {
 }
 
 export default ReservationForm;
+
+

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+﻿import React, { createContext, useState, useContext } from 'react';
 
 // Create the context
 const HotelContext = createContext();
@@ -23,3 +23,6 @@ export const HotelProvider = ({ children }) => {
     </HotelContext.Provider>
   );
 };
+
+
+

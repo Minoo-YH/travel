@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import RoomModals from "./RoomModals";
@@ -6,7 +6,7 @@ import "./rrooms.css";
 
 const Rooms = () => {
   const { hotelId } = useParams();
-  console.log("🔹 hotelId from URL params:", hotelId);
+  console.log("ðŸ”¹ hotelId from URL params:", hotelId);
   const [rooms, setRooms] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,22 +17,22 @@ const Rooms = () => {
 
   useEffect(() => {
     const fetchRooms = async () => {
-      console.log("🔹 Fetching rooms for hotelId:", hotelId);
+      console.log("ðŸ”¹ Fetching rooms for hotelId:", hotelId);
 
       try {
         const response = await axios.get(
           `https://travel-site-sa34.onrender.com/api/hotels/${hotelId}/rooms`
         );
-        console.log("✅ API response data:", response.data);
+        console.log("âœ… API response data:", response.data);
 
         if (!Array.isArray(response.data)) {
-          throw new Error("❌ Unexpected response format: not an array");
+          throw new Error("âŒ Unexpected response format: not an array");
         }
 
         setRooms(response.data);
         setLoading(false);
       } catch (error) {
-        console.error("❌ Error fetching rooms:", error);
+        console.error("âŒ Error fetching rooms:", error);
         setError("Failed to fetch rooms. Please try again.");
         setLoading(false);
       }
@@ -41,29 +41,29 @@ const Rooms = () => {
     if (hotelId) {
       fetchRooms();
     } else {
-      console.error("❌ Missing hotelId in URL params");
+      console.error("âŒ Missing hotelId in URL params");
       setError("Hotel ID is missing.");
       setLoading(false);
     }
   }, [hotelId]);
 
   const openImageModal = (roomImages) => {
-    console.log("🖼️ Opening image modal with images:", roomImages);
+    console.log("ðŸ–¼ï¸ Opening image modal with images:", roomImages);
     setCurrentRoomImages(roomImages);
     setCurrentImageIndex(0);
     setIsImageModalOpen(true);
   };
 
   const closeImageModal = () => {
-    console.log("❌ Closing image modal");
+    console.log("âŒ Closing image modal");
     setIsImageModalOpen(false);
   };
 
   const handleRoomSelection = (room) => {
-    console.log("🏨 Selected Room:", room);
+    console.log("ðŸ¨ Selected Room:", room);
 
     if (!room || !room._id) {
-      console.error("❌ Room data is incomplete!");
+      console.error("âŒ Room data is incomplete!");
       return;
     }
 
@@ -81,32 +81,32 @@ const Rooms = () => {
     };
 
     sessionStorage.setItem("reservationData", JSON.stringify(reservationData));
-    console.log("✅ Reservation data saved:", reservationData);
+    console.log("âœ… Reservation data saved:", reservationData);
   };
 
   if (loading) {
-    console.log("⏳ Loading rooms...");
+    console.log("â³ Loading rooms...");
     return <p>Loading rooms...</p>;
   }
 
   if (error) {
-    console.log("🚨 Error:", error);
+    console.log("ðŸš¨ Error:", error);
     return <p>{error}</p>;
   }
 
   return (
     <div className="rooms-container">
-      {rooms.length === 0 && <p>⚠️ No rooms available</p>}
+      {rooms.length === 0 && <p>âš ï¸ No rooms available</p>}
       {rooms.map((room, index) => {
-        console.log(`📌 Rendering room #${index + 1}:`, room);
+        console.log(`ðŸ“Œ Rendering room #${index + 1}:`, room);
 
         if (!room._id) {
-          console.error(`❌ Room at index ${index} is missing _id`);
+          console.error(`âŒ Room at index ${index} is missing _id`);
           return null;
         }
 
         const bookingLink = `/Discover/reservation/${hotelId}/${room._id}`;
-        console.log("🔗 Booking Link:", bookingLink);
+        console.log("ðŸ”— Booking Link:", bookingLink);
 
         return (
           <div key={room._id} className="room-card">
@@ -157,3 +157,6 @@ const Rooms = () => {
 };
 
 export default Rooms;
+
+
+

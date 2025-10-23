@@ -1,4 +1,4 @@
-import mapboxgl from 'mapbox-gl';
+﻿import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 
@@ -23,3 +23,6 @@ export const flyToLocation = (map, coordinates) => {
     essential: true,
   });
 };
+
+
+
